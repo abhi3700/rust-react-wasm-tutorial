@@ -45,7 +45,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Add Rust to React
+## Add Rust (for Rust dev)
 
 ```rust
 // Create Rust library for Wasm
@@ -81,17 +81,21 @@ pub fn add(left: usize, right: usize) -> usize {
 }
 ```
 
+## For React dev
+
 And then use `wasm-pack` to build the Rust library into a WebAssembly module and bundle it up into a JavaScript package.
 
 ```sh
-# install wasm-pack
+# install wasm-pack (by Rust dev)
 $ cargo install wasm-pack
+# OR (by React dev)
+$ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 # verify wasm-pack installation
 $ wasm-pack --version
 ```
 
-And then add a script command into `package.json`:
+Next, add a script command into `package.json`:
 
 ```diff
   "scripts": {
@@ -103,7 +107,7 @@ And then add a script command into `package.json`:
   },
 ```
 
-And then run the script command:
+Next, run the script command:
 
 ```sh
 $ npm run build:wasm
